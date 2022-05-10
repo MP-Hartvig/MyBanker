@@ -6,40 +6,51 @@ using System.Threading.Tasks;
 
 namespace MyBanker
 {
-    class Account
+    public class Account
     {
         private Person Client;
         private string RegistrationNumber = "3520";
         private string AccountNumber;
-        private int Balance;
         private List<Card> AssociatedCards;
 
-        public Account(Person person, string accNr, int balance, List<Card> associatedCards)
+        public Account(Person person, List<Card> associatedCards)
         {
             Client = person;
-            AccountNumber = accNr;
-            Balance = balance;
+            GenerateAccountNumber();
             AssociatedCards = associatedCards;
         }
 
-        private int GenerateAccountNumber()
+        private void GenerateAccountNumber()
         {
-            return 0;
+            Random random = new Random();
+
+            StringBuilder sb = new StringBuilder();
+
+            string startNumber = random.Next(1, 10).ToString();
+
+            sb.Append(startNumber);
+
+            for (int i = 0; i < 10; i++)
+            {
+                sb.Append(random.Next(0, 10));
+            }
+
+            AccountNumber = sb.ToString();
         }
 
-        private int GenerateBalance()
-        {
-            return 0;
-        }
+        //private int GenerateBalance()
+        //{
+        //    return 0;
+        //}
 
-        private int WithdrawFunds()
-        {
-            return 0;
-        }
+        //private int WithdrawFunds()
+        //{
+        //    return 0;
+        //}
 
-        private int DepositFunds()
-        {
-            return 0;
-        }
+        //private int DepositFunds()
+        //{
+        //    return 0;
+        //}
     }
 }

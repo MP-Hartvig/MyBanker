@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MyBanker.Interfaces
 {
-    internal interface IExpiryDate
+    public interface IExpiryDate
     {
+        DateTime GenerateExpiryDate();
     }
 }

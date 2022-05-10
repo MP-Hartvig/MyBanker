@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyBanker
 {
-    class Person
+    public class Person
     {
         private int Age;
         private string Name;
@@ -23,24 +23,24 @@ namespace MyBanker
             BankAccounts = bankAccounts;
         }
 
-        private int GenerateRandomAge()
-        {
+        //private int GenerateRandomAge()
+        //{
 
-        }
+        //}
 
-        private string GenerateRandomName()
-        {
+        //private string GenerateRandomName()
+        //{
             
-        }
+        //}
 
-        private string GenerateRandomAddress()
-        {
+        //private string GenerateRandomAddress()
+        //{
 
-        }
+        //}
 
-        private string GenerateRandomPhoneNumber()
-        {
+        //private string GenerateRandomPhoneNumber()
+        //{
 
-        }
+        //}
     }
 }

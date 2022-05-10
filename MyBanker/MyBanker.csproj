@@ -52,8 +52,6 @@
     <Compile Include="Cards\VisaElectron.cs" />
     <Compile Include="Main-GUI-Manager\GUI.cs" />
     <Compile Include="Interfaces\IExpiryDate.cs" />
-    <Compile Include="Interfaces\IMonthlyWithdrawalAmount.cs" />
-    <Compile Include="Interfaces\IOverdraftAmount.cs" />
     <Compile Include="Main-GUI-Manager\Manager.cs" />
     <Compile Include="Prerequisites\Person.cs" />
     <Compile Include="Main-GUI-Manager\Program.cs" />

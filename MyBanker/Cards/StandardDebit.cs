@@ -6,7 +6,30 @@ using System.Threading.Tasks;
 
 namespace MyBanker.Cards
 {
-    class StandardDebit
+    class StandardDebit : Card
     {
+        private string CardNumber;
+
+        public StandardDebit(Person person, Account account) : base(person, account)
+        {
+            CardNumber = GenerateCardNumber();
+        }
+
+        protected override string GenerateCardNumber()
+        {
+            StringBuilder builder = new StringBuilder();
+            Random random = new Random();
+
+            string prefix = "2400";
+
+            builder.Append(prefix);
+
+            for (int i = 0; i < 13; i++)
+            {
+                builder.Append(random.Next(0, 9));
+            }
+
+            return builder.ToString();
+        }
     }
 }

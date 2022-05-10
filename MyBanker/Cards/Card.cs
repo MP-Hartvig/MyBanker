@@ -6,22 +6,18 @@ using System.Threading.Tasks;
 
 namespace MyBanker
 {
-    abstract class Card
+    public abstract class Card
     {
-        private string Name;
-        private string CardNumber;
-        private string RegistrationNumber;
-        private string AccountNumber;
+        private Person AssociatedPerson;
+        private Account AssociatedAccount;
 
-        public Card(string name, string cardNumber, string regNr, string accNr)
+        public Card(Person person, Account account)
         {
-            Name = name;
-            CardNumber = cardNumber;
-            RegistrationNumber = regNr;
-            AccountNumber = accNr;
+            AssociatedPerson = person;
+            AssociatedAccount = account;
         }
 
-        public virtual string GenerateCardNumber()
+        protected virtual string GenerateCardNumber()
         {
             return null;
         }
