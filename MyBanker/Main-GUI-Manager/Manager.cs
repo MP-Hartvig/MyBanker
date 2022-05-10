@@ -16,9 +16,11 @@ namespace MyBanker
 
             List<Card> cards = new List<Card>();
             Account account = new Account(person, cards);
+            accounts.Add(account);
+
+            Console.WriteLine($"\n{accounts.Count} account was created.");
 
             Mastercard mastercard = new Mastercard(person, account);
-
             cards.Add(mastercard);
 
             Console.WriteLine($"\n{cards.Count} card was created.");

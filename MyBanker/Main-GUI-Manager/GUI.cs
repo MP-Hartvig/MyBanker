@@ -62,7 +62,7 @@ namespace MyBanker
             }
         }
 
-        public void CreateCardMenu()
+        private void CreateCardMenu()
         {
             Console.Clear();
             Console.WriteLine("==================================================");
@@ -102,7 +102,7 @@ namespace MyBanker
             StartMenu();
         }
 
-        public void ExitApplication()
+        private void ExitApplication()
         {
             Environment.Exit(0);
         }

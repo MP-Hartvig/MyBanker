@@ -11,6 +11,7 @@ namespace MyBanker
         private Person Client;
         private string RegistrationNumber = "3520";
         private string AccountNumber;
+        //private int Balance;
         private List<Card> AssociatedCards;
 
         public Account(Person person, List<Card> associatedCards)
