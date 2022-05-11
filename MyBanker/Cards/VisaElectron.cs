@@ -10,13 +10,17 @@ namespace MyBanker.Cards
     class VisaElectron : Card, IExpiryDate
     {
         private string CardNumber;
-        private int MonthlyWithoutdrawalAmount = 10000;
-        private DateTime ExpiryDate;
+        private int monthlyWithoutdrawalAmount = 10000;
+        private DateTime expiryDate;
+
+        // I know this isn't the way to go, but will have to do until i learn a better approach.
+        public int MonthlyWithoutdrawalAmount { get { return monthlyWithoutdrawalAmount; } set { monthlyWithoutdrawalAmount = value; } }
+        public DateTime ExpiryDate { get { return expiryDate; } set { expiryDate = value; } }
 
         public VisaElectron(Person person, Account account) : base(person, account)
         {
             CardNumber = GenerateCardNumber();
-            ExpiryDate = GenerateExpiryDate();
+            expiryDate = GenerateExpiryDate();
         }
 
         protected override string GenerateCardNumber()

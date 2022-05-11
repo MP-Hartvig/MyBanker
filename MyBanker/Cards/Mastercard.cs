@@ -15,6 +15,7 @@ namespace MyBanker.Cards
         private int overdraftAmount = 40000;
         private DateTime expiryDate;
 
+        // I know this isn't the way to go, but will have to do until i learn a better approach.
         public string CardNumber { get { return cardNumber; } set { cardNumber = value; } }
         public int DailyWithdrawalAmount { get { return dailyWithdrawalAmount; } set { dailyWithdrawalAmount = value; } }
         public int MonthlyWithoutdrawalAmount { get { return monthlyWithoutdrawalAmount; } set { monthlyWithoutdrawalAmount = value; } }

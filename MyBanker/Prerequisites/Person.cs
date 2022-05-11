@@ -14,6 +14,7 @@ namespace MyBanker
         private string phone;
         private List<Account> BankAccounts;
 
+        // I know this isn't the way to go, but will have to do until i learn a better approach.
         public int Age { get { return age; } set { age = value; } }
         public string Name { get { return name; } set { name = value; } }
         public string Address { get { return address; } set { address = value; } }

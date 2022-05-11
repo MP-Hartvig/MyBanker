@@ -14,23 +14,10 @@ namespace MyBanker
         private List<Card> associatedCards;
         //private int Balance;
 
-        public Person Client
-        {
-            get { return client; }
-            set { client = value; }
-        }
-
-        public string RegistrationNumber
-        {
-            get { return registrationNumber; }
-            set { registrationNumber = value; }
-        }
-
-        public string AccountNumber
-        {
-            get { return accountNumber; }
-            set { accountNumber = value; }
-        }
+        // I know this isn't the way to go, but will have to do until i learn a better approach.
+        public Person Client { get { return client; } set { client = value; } }
+        public string RegistrationNumber { get { return registrationNumber; } set { registrationNumber = value; } }
+        public string AccountNumber { get { return accountNumber; } set { accountNumber = value; } }
 
         public Account(Person person, List<Card> associatedCardsList)
         {

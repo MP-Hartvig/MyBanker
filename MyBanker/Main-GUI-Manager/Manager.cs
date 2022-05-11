@@ -36,7 +36,7 @@ namespace MyBanker
             Console.WriteLine("\nAccount number: " + mastercard.AssociatedAccount.AccountNumber);
 
             Console.WriteLine("\nThe following card information was generated: ");
-            Console.WriteLine("\nCardnumber: " + mastercard.CardNumber); // Output needs to be fixed
+            Console.WriteLine("\nCardnumber: " + mastercard.CardNumber);
             Console.WriteLine("\nExpiry date: " + mastercard.ExpiryDate); 
             Console.WriteLine("\nDaily withdrawal amount: " + mastercard.DailyWithdrawalAmount); 
             Console.WriteLine("\nMonthly withdrawal amount: " + mastercard.MonthlyWithoutdrawalAmount); 

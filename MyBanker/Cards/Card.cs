@@ -11,17 +11,9 @@ namespace MyBanker
         private Person associatedPerson;
         private Account associatedAccount;
 
-        public Person AssociatedPerson
-        {
-            get { return associatedPerson; }
-            set { associatedPerson = value; }
-        }
-
-        public Account AssociatedAccount
-        {
-            get { return associatedAccount; }
-            set { associatedAccount = value; }
-        }
+        // I know this isn't the way to go, but will have to do until i learn a better approach.
+        public Person AssociatedPerson { get { return associatedPerson; } set { associatedPerson = value; } }
+        public Account AssociatedAccount { get { return associatedAccount; } set { associatedAccount = value; } }
 
         public Card(Person person, Account account)
         {

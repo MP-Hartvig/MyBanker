@@ -8,6 +8,8 @@ namespace MyBanker.Interfaces
 {
     public interface IExpiryDate
     {
+        DateTime ExpiryDate { get; }
+
         DateTime GenerateExpiryDate();
     }
 }

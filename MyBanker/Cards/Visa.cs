@@ -12,12 +12,15 @@ namespace MyBanker.Cards
         private string CardNumber;
         private int MonthlyWithoutdrawalAmount = 25000;
         private int OverdraftAmount = 20000;
-        private DateTime ExpiryDate;
+        private DateTime expiryDate;
+
+        // I know this isn't the way to go, but will have to do until i learn a better approach.
+        public DateTime ExpiryDate { get { return expiryDate; } set { expiryDate = value; } }
 
         public Visa(Person person, Account account) : base(person, account)
         {
             CardNumber = GenerateCardNumber();
-            ExpiryDate = GenerateExpiryDate();
+            expiryDate = GenerateExpiryDate();
         }
 
         protected override string GenerateCardNumber()
