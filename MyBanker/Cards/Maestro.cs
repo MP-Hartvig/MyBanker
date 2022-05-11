@@ -9,15 +9,16 @@ namespace MyBanker.Cards
 {
     class Maestro : Card, IExpiryDate
     {
-        private string CardNumber;
+        private string cardNumber;
         private DateTime expiryDate;
 
         // I know this isn't the way to go, but will have to do until i learn a better approach.
+        public string CardNumber { get { return cardNumber; } set { cardNumber = value; } }
         public DateTime ExpiryDate { get { return expiryDate; } set { expiryDate = value; } }
 
         public Maestro(Person person, Account account) : base(person, account)
         {
-            CardNumber = GenerateCardNumber();
+            cardNumber = GenerateCardNumber();
             expiryDate = GenerateExpiryDate();
         }
 

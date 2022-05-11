@@ -8,11 +8,13 @@ namespace MyBanker.Cards
 {
     class StandardDebit : Card
     {
-        private string CardNumber;
+        private string cardNumber;
+
+        public string CardNumber { get { return cardNumber; } set { CardNumber = value; } }
 
         public StandardDebit(Person person, Account account) : base(person, account)
         {
-            CardNumber = GenerateCardNumber();
+            cardNumber = GenerateCardNumber();
         }
 
         protected override string GenerateCardNumber()

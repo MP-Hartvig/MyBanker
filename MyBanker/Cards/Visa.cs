@@ -9,17 +9,20 @@ namespace MyBanker.Cards
 {
     class Visa : Card, IExpiryDate
     {
-        private string CardNumber;
-        private int MonthlyWithoutdrawalAmount = 25000;
-        private int OverdraftAmount = 20000;
+        private string cardNumber;
+        private int monthlyWithoutdrawalAmount = 25000;
+        private int overdraftAmount = 20000;
         private DateTime expiryDate;
 
         // I know this isn't the way to go, but will have to do until i learn a better approach.
+        public string CardNumber { get { return cardNumber; } set { cardNumber = value; } }
+        public int MonthlyWithoutdrawalAmount { get { return monthlyWithoutdrawalAmount; } set { monthlyWithoutdrawalAmount = value; } }
+        public int OverdraftAmount { get { return overdraftAmount; } set { overdraftAmount = value; } }
         public DateTime ExpiryDate { get { return expiryDate; } set { expiryDate = value; } }
 
         public Visa(Person person, Account account) : base(person, account)
         {
-            CardNumber = GenerateCardNumber();
+            cardNumber = GenerateCardNumber();
             expiryDate = GenerateExpiryDate();
         }
 
