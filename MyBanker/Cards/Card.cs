@@ -8,13 +8,25 @@ namespace MyBanker
 {
     public abstract class Card
     {
-        private Person AssociatedPerson;
-        private Account AssociatedAccount;
+        private Person associatedPerson;
+        private Account associatedAccount;
+
+        public Person AssociatedPerson
+        {
+            get { return associatedPerson; }
+            set { associatedPerson = value; }
+        }
+
+        public Account AssociatedAccount
+        {
+            get { return associatedAccount; }
+            set { associatedAccount = value; }
+        }
 
         public Card(Person person, Account account)
         {
-            AssociatedPerson = person;
-            AssociatedAccount = account;
+            associatedPerson = person;
+            associatedAccount = account;
         }
 
         protected virtual string GenerateCardNumber()

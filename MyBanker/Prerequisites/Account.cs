@@ -8,17 +8,35 @@ namespace MyBanker
 {
     public class Account
     {
-        private Person Client;
-        private string RegistrationNumber = "3520";
-        private string AccountNumber;
+        private Person client;
+        private string registrationNumber = "3520";
+        private string accountNumber;
+        private List<Card> associatedCards;
         //private int Balance;
-        private List<Card> AssociatedCards;
 
-        public Account(Person person, List<Card> associatedCards)
+        public Person Client
         {
-            Client = person;
+            get { return client; }
+            set { client = value; }
+        }
+
+        public string RegistrationNumber
+        {
+            get { return registrationNumber; }
+            set { registrationNumber = value; }
+        }
+
+        public string AccountNumber
+        {
+            get { return accountNumber; }
+            set { accountNumber = value; }
+        }
+
+        public Account(Person person, List<Card> associatedCardsList)
+        {
+            client = person;
             GenerateAccountNumber();
-            AssociatedCards = associatedCards;
+            associatedCards = associatedCardsList;
         }
 
         private void GenerateAccountNumber()

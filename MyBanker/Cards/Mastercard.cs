@@ -9,16 +9,22 @@ namespace MyBanker.Cards
 {
     public class Mastercard : Card, IExpiryDate
     {
-        private string CardNumber;
-        private int DailyWithdrawalAmount = 5000;
-        private int MonthlyWithoutdrawalAmount = 30000;
-        private int OverdraftAmount = 40000;
-        private DateTime ExpiryDate;
+        private string cardNumber;
+        private int dailyWithdrawalAmount = 5000;
+        private int monthlyWithoutdrawalAmount = 30000;
+        private int overdraftAmount = 40000;
+        private DateTime expiryDate;
+
+        public string CardNumber { get { return cardNumber; } set { cardNumber = value; } }
+        public int DailyWithdrawalAmount { get { return dailyWithdrawalAmount; } set { dailyWithdrawalAmount = value; } }
+        public int MonthlyWithoutdrawalAmount { get { return monthlyWithoutdrawalAmount; } set { monthlyWithoutdrawalAmount = value; } }
+        public int OverdraftAmount { get { return overdraftAmount; } set { overdraftAmount = value; } }
+        public DateTime ExpiryDate { get { return expiryDate; } set { expiryDate = value; } }
 
         public Mastercard(Person person, Account account) : base(person, account)
         {
-            CardNumber = GenerateCardNumber();
-            ExpiryDate = GenerateExpiryDate();
+            cardNumber = GenerateCardNumber();
+            expiryDate = GenerateExpiryDate();
         }
 
         protected override string GenerateCardNumber()
@@ -33,7 +39,7 @@ namespace MyBanker.Cards
             prefix[3] = "54";
             prefix[4] = "55";
 
-            builder.Append(prefix);
+            builder.Append(prefix[random.Next(0, 5)]);
 
             for (int i = 0; i < 15; i++)
             {
@@ -45,9 +51,9 @@ namespace MyBanker.Cards
 
         public DateTime GenerateExpiryDate()
         {
-            ExpiryDate = DateTime.Now;
-            ExpiryDate.AddYears(5);
-            return ExpiryDate;
+            expiryDate = DateTime.Now;
+            expiryDate.AddYears(5);
+            return expiryDate;
         }
     }
 }
